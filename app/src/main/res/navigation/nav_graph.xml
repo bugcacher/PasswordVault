@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/loginPasswords">
+
+    <fragment
+        android:id="@+id/loginPasswords"
+        android:name="com.example.passwordvault.ui.fragments.LoginPasswords"
+        android:label="LoginPasswords" />
+    <fragment
+        android:id="@+id/cardDetials"
+        android:name="com.example.passwordvault.ui.fragments.CardDetials"
+        android:label="CardDetials" />
+</navigation>
