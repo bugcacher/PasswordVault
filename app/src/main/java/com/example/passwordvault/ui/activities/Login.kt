@@ -10,9 +10,7 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import com.example.passwordvault.R
-import com.example.passwordvault.databinding.CreateMasterPasswordBinding
 import com.example.passwordvault.databinding.LoginBinding
-import com.example.passwordvault.databinding.LoginPasswordsBinding
 
 class Login : AppCompatActivity(),View.OnClickListener {
     private lateinit var binding : LoginBinding

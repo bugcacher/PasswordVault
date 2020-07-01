@@ -29,13 +29,13 @@
                 android:layout_height="wrap_content"
                 app:fab_label="Cards"
                 app:fab_size="mini"
-                android:id="@+id/cards"/>
+                android:id="@+id/cardsDetails"/>
             <com.github.clans.fab.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:fab_label="Login"
                 app:fab_size="mini"
-                android:id="@+id/loginPassword"/>
+                android:id="@+id/loginDetails"/>
             <com.github.clans.fab.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

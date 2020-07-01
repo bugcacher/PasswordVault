@@ -488,7 +488,7 @@ class Register : AppCompatActivity(),View.OnClickListener {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == PERMISSIONCODE && grantResults.isNotEmpty() && grantResults[0] != null){
+        if (requestCode == PERMISSIONCODE && grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
             Toast.makeText(this,"Permission Granted!",Toast.LENGTH_SHORT).show()
         }
         else {

@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
-    app:startDestination="@id/loginPasswords">
+    app:startDestination="@id/loginDetails">
 
     <fragment
-        android:id="@+id/loginPasswords"
-        android:name="com.example.passwordvault.ui.fragments.LoginPasswords"
-        android:label="LoginPasswords" />
+        android:id="@+id/loginDetails"
+        android:name="com.example.passwordvault.ui.fragments.LoginDetails"
+        android:label="LoginDetails" />
     <fragment
-        android:id="@+id/cardDetials"
-        android:name="com.example.passwordvault.ui.fragments.CardDetials"
-        android:label="CardDetials" />
+        android:id="@+id/cardDetails"
+        android:name="com.example.passwordvault.ui.fragments.CardDetails"
+        android:label="CardDetails" />
+    <fragment
+        android:id="@+id/bankDetails"
+        android:name="com.example.passwordvault.ui.fragments.BankDetails"
+        android:label="BankDetails" />
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.example.passwordvault.ui.fragments.Settings"
+        android:label="Settings" />
+    <fragment
+        android:id="@+id/passwordGenerator"
+        android:name="com.example.passwordvault.ui.fragments.PasswordGenerator"
+        android:label="PasswordGenerator" />
+    <fragment
+        android:id="@+id/addBankDetails"
+        android:name="com.example.passwordvault.ui.fragments.AddBankDetails"
+        android:label="AddBankDetails" />
+    <action
+        android:id="@+id/action_global_addBankDetails"
+        app:destination="@id/addBankDetails" />
 </navigation>

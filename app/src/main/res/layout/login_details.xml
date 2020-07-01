@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/colorAccent">
+    >
+    <Spinner
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+       android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:id="@+id/loginTypeSpinner"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_margin="20dp"
+        android:text="Category"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="Filter"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:background="@drawable/button_bg"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginTypeSpinner"
+        android:layout_margin="10dp"
+        android:id="@+id/loginDetailsRecyclerView"/>
 
 </RelativeLayout>

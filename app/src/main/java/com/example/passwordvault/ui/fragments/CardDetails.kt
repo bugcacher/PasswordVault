@@ -6,12 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.passwordvault.databinding.CardsDetailsBinding
-import com.example.passwordvault.databinding.LoginPasswordsBinding
 
 /**
  * Created by Abhinav Singh on 29,June,2020
  */
-class CardDetials : Fragment() {
+class CardDetails : Fragment() {
 
     private lateinit var binding: CardsDetailsBinding
 

@@ -4,15 +4,23 @@
     <item
         android:title="Login"
         android:icon="@drawable/password_entered"
-        android:id="@+id/loginPasswords"/>
+        android:id="@+id/loginDetails"/>
     <item
         android:title="Cards"
         android:icon="@drawable/password_entered"
-        android:id="@+id/cardDetials"/>
+        android:id="@+id/cardDetails"/>
     <item
-        android:title="Bank"
+        android:title="Banks"
         android:icon="@drawable/password_entered"
-        android:id="@+id/menu_bank"/>
+        android:id="@+id/bankDetails"/>
+    <item
+        android:title="Password Generator"
+        android:icon="@drawable/password_entered"
+        android:id="@+id/passwordGenerator"/>
+    <item
+        android:title="Settings"
+        android:icon="@drawable/password_entered"
+        android:id="@+id/settings"/>
 
 
 </menu>
