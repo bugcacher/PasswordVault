@@ -1,5 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="105dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/bankIcon"
+        android:src="@drawable/ic_pay"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/bankNameEt"
+        android:layout_marginRight="20dp"
+        android:layout_toRightOf="@id/bankIcon"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="80dp"
+        android:hint="Bank Name"/>
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/bankAccountIcon"
+        android:src="@drawable/user"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/bankAccountNumberEt"
+        android:layout_marginRight="20dp"
+        android:layout_toRightOf="@id/bankAccountIcon"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="140dp"
+        android:hint="Account Number"/>
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/bankIFSCIcon"
+        android:src="@drawable/ic_calendar"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/bankIFSCEt"
+        android:layout_marginRight="20dp"
+        android:layout_toRightOf="@id/bankIFSCIcon"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="200dp"
+        android:hint="IFSC Code"/>
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="285dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/bankAddressIcon"
+        android:src="@drawable/ic_cvv"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/bankAddressEt"
+        android:layout_marginRight="20dp"
+        android:layout_toRightOf="@id/bankAddressIcon"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="260dp"
+        android:hint="Branch Address"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addBankDetails"
+        android:layout_below="@id/bankAddressEt"
+        android:padding="10dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_bg"
+        android:text="Add Bank Details"
+        android:textColor="#fff"
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>

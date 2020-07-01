@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:title="Login"
-        android:icon="@drawable/ic_brightness_1_black_24dp"
+        android:icon="@drawable/password_entered"
         android:id="@+id/loginPasswords"/>
     <item
         android:title="Cards"
-        android:icon="@drawable/ic_brightness_1_black_24dp"
+        android:icon="@drawable/password_entered"
         android:id="@+id/cardDetials"/>
     <item
         android:title="Bank"
-        android:icon="@drawable/ic_brightness_1_black_24dp"
+        android:icon="@drawable/password_entered"
         android:id="@+id/menu_bank"/>
 
 
