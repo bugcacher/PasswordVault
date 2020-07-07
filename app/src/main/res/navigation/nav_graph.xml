@@ -24,10 +24,16 @@
         android:name="com.example.passwordvault.ui.fragments.PasswordGenerator"
         android:label="PasswordGenerator" />
     <fragment
+        android:id="@+id/addCardDetails"
+        android:name="com.example.passwordvault.ui.fragments.AddCardDetails"
+        android:label="AddCardDetails" />
+    <action android:id="@+id/action_global_addCardDetails" app:destination="@id/addCardDetails" />
+    <fragment
         android:id="@+id/addBankDetails"
         android:name="com.example.passwordvault.ui.fragments.AddBankDetails"
         android:label="AddBankDetails" />
-    <action
-        android:id="@+id/action_global_addBankDetails"
-        app:destination="@id/addBankDetails" />
+    <fragment
+        android:id="@+id/addLoginDetails"
+        android:name="com.example.passwordvault.ui.fragments.AddLoginDetails"
+        android:label="AddLoginDetails" /><action android:id="@+id/action_global_addBankDetails" app:destination="@id/addBankDetails"/><action android:id="@+id/action_global_addLoginDetails" app:destination="@id/addLoginDetails"/>
 </navigation>

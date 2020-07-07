@@ -24,6 +24,7 @@
         android:columnCount="4"
         android:layout_marginTop="100dp"
         android:layout_marginRight="100dp"
+        android:id="@+id/pinLayout"
         android:layout_marginLeft="100dp"
         android:layout_below="@+id/appIcon"
         android:rowCount="1">
@@ -56,6 +57,8 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:columnCount="3"
+        android:layout_margin="50dp"
+        android:layout_below="@id/pinLayout"
         android:rowCount="4"
         android:id="@+id/passwordGridLayout"
         android:layout_alignParentBottom="true">
@@ -182,7 +185,7 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:gravity="center"
-            android:text="GO"
+            android:text="0"
             android:textSize="26dp"
             android:id="@+id/next"
             android:layout_rowWeight="1"

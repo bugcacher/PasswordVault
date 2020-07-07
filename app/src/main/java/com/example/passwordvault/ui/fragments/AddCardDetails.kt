@@ -13,14 +13,22 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.passwordvault.databinding.AddCardBinding
+import com.example.passwordvault.model.CardDetailsItem
+import com.example.passwordvault.viewmodel.DetailsViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
+import kotlin.collections.ArrayList
 import android.widget.AdapterView.OnItemSelectedListener as OnItemSelectedListener1
 
 
 /**
  * Created by Abhinav Singh on 01,July,2020
  */
+@AndroidEntryPoint
 class AddCardDetails : Fragment(), AdapterView.OnItemSelectedListener{
+    private lateinit var viewModel: DetailsViewModel
     private lateinit var binding: AddCardBinding
     private var cardIssuer : String = "Master Card"
     val issuerList: ArrayList<String> = ArrayList()
@@ -36,10 +44,21 @@ class AddCardDetails : Fragment(), AdapterView.OnItemSelectedListener{
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
+
         initSpinner()
         binding.addDebitCard.setOnClickListener {
-            if(valid()){
-                // todo save card
+            var cardNumber = binding.cardNumberEt.text.toString().trim()
+            var cardHolder = binding.cardHolderEt.text.toString().trim()
+            var cardCVV    = binding.cardCvvEt.text.toString().trim()
+            var cardExpiry = binding.cardExpiryEt.text.toString().trim()
+
+            if(valid(cardNumber,cardHolder,cardExpiry,cardCVV)){
+                var split = cardExpiry.split("-")
+
+                viewModel.insertCardDetails(CardDetailsItem(cardHolder,cardIssuer,cardNumber.toLong(),
+                    split[0],split[1],cardCVV.toInt()))
+                Toast.makeText(context,"Details Inserted",Toast.LENGTH_SHORT).show()
             }
             else
                 Toast.makeText(context,"Please fil all blanks",Toast.LENGTH_SHORT).show()
@@ -59,13 +78,10 @@ class AddCardDetails : Fragment(), AdapterView.OnItemSelectedListener{
         binding.issuerSpinner.onItemSelectedListener = this
     }
 
-    private fun valid() : Boolean{
-        var cardNumber = binding.cardNumberEt.text.toString().trim()
-        var cardHolder = binding.cardHolderEt.text.toString().trim()
-        var cardCVV    = binding.cardCvvEt.text.toString().trim()
-        var cardExpiry = binding.cardExpiryEt.text.toString().trim()
+    private fun valid(cardNumber : String, cardHolder : String,  cardExpiry: String, cardCVV: String) : Boolean{
+
         return !(cardNumber.isEmpty() || cardHolder.isEmpty() || cardCVV.isEmpty()
-                || cardExpiry.isEmpty())
+                || cardExpiry.isEmpty() || cardIssuer.isEmpty())
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
