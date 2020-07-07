@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="5dp"
     app:cardCornerRadius="15dp"
+    android:id="@+id/bankItemCard"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -24,18 +25,18 @@
             android:textColor="#000"
             android:text="SBI Bank"
             android:layout_height="wrap_content"
-            android:id="@+id/itemTitle"/>
+            android:id="@+id/bankName"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/itemIcon"
-            android:layout_below="@id/itemTitle"
+            android:layout_below="@id/bankName"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:text="1570-8787-545-54545"
-            android:id="@+id/itemId"
+            android:id="@+id/bankAccountNumber"
             />
 
     </RelativeLayout>

@@ -31,7 +31,7 @@ class AddCardDetails : Fragment(), AdapterView.OnItemSelectedListener{
     private lateinit var viewModel: DetailsViewModel
     private lateinit var binding: AddCardBinding
     private var cardIssuer : String = "Master Card"
-    val issuerList: ArrayList<String> = ArrayList()
+    private val issuerList: ArrayList<String> = ArrayList()
 
 
     override fun onCreateView(
@@ -66,6 +66,7 @@ class AddCardDetails : Fragment(), AdapterView.OnItemSelectedListener{
     }
 
     private fun initSpinner() {
+        issuerList.add("Issuer")
         issuerList.add("Master Card")
         issuerList.add("Maestro")
         issuerList.add("Rupay")
@@ -89,6 +90,7 @@ class AddCardDetails : Fragment(), AdapterView.OnItemSelectedListener{
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        cardIssuer = issuerList[position]
+        if(position != 0)
+            cardIssuer = issuerList[position]
     }
 }

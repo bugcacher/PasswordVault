@@ -20,7 +20,7 @@ interface CardDao {
     @Query("DELETE FROM CardDetailsTable WHERE cardNumber = :cardNumber")
     fun deleteCardDetails(cardNumber : Long)
 
-    @Query("SELECT * FROM PassManager")
+    @Query("SELECT * FROM CardDetailsTable")
     fun getAllCardDetails() : LiveData<List<CardDetailsItem>>
 
 }

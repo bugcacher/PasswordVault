@@ -10,7 +10,7 @@ import com.example.passwordvault.ui.fragments.BankDetails
 /**
  * Created by Abhinav Singh on 07,July,2020
  */
-@Database(entities = [BankDetailsItem::class, LoginDetailsItem::class, CardDetailsItem::class],version = 2,exportSchema = false)
+@Database(entities = [BankDetailsItem::class, LoginDetailsItem::class, CardDetailsItem::class],version = 3,exportSchema = false)
 abstract class PasswordDatabase : RoomDatabase() {
 
     abstract fun bankDao() : BankDao

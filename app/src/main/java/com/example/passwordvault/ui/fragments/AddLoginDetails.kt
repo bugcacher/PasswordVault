@@ -1,37 +1,31 @@
 package com.example.passwordvault.ui.fragments
 
 import android.R
-import android.content.Context
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.AnimRes
-import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.passwordvault.databinding.AddBankBinding
-import com.example.passwordvault.databinding.AddCardBinding
 import com.example.passwordvault.databinding.AddLoginBinding
 import com.example.passwordvault.model.LoginDetailsItem
 import com.example.passwordvault.viewmodel.DetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.add_login.*
-import android.widget.AdapterView.OnItemSelectedListener as OnItemSelectedListener1
 
 
 /**
  * Created by Abhinav Singh on 01,July,2020
  */
 @AndroidEntryPoint
-class AddLoginDetails : Fragment(){
+class AddLoginDetails : Fragment(),AdapterView.OnItemSelectedListener{
     private lateinit var viewModel: DetailsViewModel
     private lateinit var binding: AddLoginBinding
+    private val categoryList: ArrayList<String> = ArrayList()
+    private lateinit var category : String
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,13 +46,14 @@ class AddLoginDetails : Fragment(){
             var loginWebsite    = binding.loginWebsiteEt.text.toString().trim()
             var loginNotes      = binding.loginNoteEt.text.toString().trim()
 
+
             if(loginWebsite.isEmpty())
                 loginWebsite = " "
             if(loginNotes.isEmpty())
                 loginNotes  = " "
 
             if(valid(loginName,loginEmail,loginPassword)){
-                viewModel.insertLoginDetails(LoginDetailsItem(loginName,loginEmail,loginPassword,loginWebsite,loginNotes))
+                viewModel.insertLoginDetails(LoginDetailsItem(loginName,loginEmail,loginPassword,loginWebsite,loginNotes,category))
                 Toast.makeText(context,"Details Inserted",Toast.LENGTH_SHORT).show()
             }
             else
@@ -66,10 +61,32 @@ class AddLoginDetails : Fragment(){
         }
     }
 
+    private fun initSpinner() {
+        categoryList.add("Category")
+        categoryList.add("Social")
+        categoryList.add("Work")
+        categoryList.add("E-Commerce")
+        categoryList.add("Others")
+
+        val adapter  = ArrayAdapter<String> (requireContext(),R.layout.simple_spinner_dropdown_item
+            ,categoryList)
+        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
+        binding.loginCategorySpinner.adapter = adapter
+        binding.loginCategorySpinner.onItemSelectedListener = this
+    }
 
 
     private fun valid(loginName : String, loginEmail : String,  loginPassword: String) : Boolean{
 
-        return !(loginName.isEmpty() || loginEmail.isEmpty() || loginPassword.isEmpty())
+        return !(loginName.isEmpty() || loginEmail.isEmpty() || loginPassword.isEmpty() || category.isEmpty())
+    }
+
+    override fun onNothingSelected(p0: AdapterView<*>?) {
+
+    }
+
+    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+        if(p2 != 0)
+            category = categoryList[p2]
     }
 }

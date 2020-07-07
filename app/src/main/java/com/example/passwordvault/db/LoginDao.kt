@@ -20,7 +20,7 @@ interface LoginDao {
     @Query("DELETE FROM LoginDetailsTable WHERE loginEmail = :email")
     fun deleteLoginDetails(email : String)
 
-    @Query("SELECT * FROM PassManager")
+    @Query("SELECT * FROM LoginDetailsTable")
     fun getAllLoginDetails() : LiveData<List<LoginDetailsItem>>
 
 }
