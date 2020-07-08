@@ -43,7 +43,7 @@ class DetailsViewModel @ViewModelInject constructor(private val repository: Repo
         repository.insertCardDetails(cardDetailsItem)
     }
 
-    fun deleteCardDetails(cardNumber: Long){
+    fun deleteCardDetails(cardNumber: String){
         repository.deleteCardDetails(cardNumber)
     }
 
@@ -63,5 +63,9 @@ class DetailsViewModel @ViewModelInject constructor(private val repository: Repo
     fun getAllLoginDetails() : LiveData<List<LoginDetailsItem>>{
         return loginDetaisList
     }
+    fun getCategoryLoginDetails(category : String) : LiveData<List<LoginDetailsItem>>{
+        return repository.getCategoryLoginDetails(category)
+    }
+
 
 }

@@ -4,14 +4,16 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.passwordvault.databinding.BankListItemBinding
 import com.example.passwordvault.model.BankDetailsItem
+import com.example.passwordvault.ui.dialog.BankDialog
 
 /**
  * Created by Abhinav Singh on 07,July,2020
  */
-class BankDetailsAdapter(private var mContext : Context?, private var mList : List<BankDetailsItem>) : RecyclerView.Adapter<BankDetailsAdapter.BankDetailsViewHolder>() {
+class BankDetailsAdapter(private var mContext : Context?, private var mList : List<BankDetailsItem>, private var fragmentManager : FragmentManager) : RecyclerView.Adapter<BankDetailsAdapter.BankDetailsViewHolder>() {
     private  lateinit var binding : BankListItemBinding
 
 
@@ -29,7 +31,8 @@ class BankDetailsAdapter(private var mContext : Context?, private var mList : Li
         binding.bankName.text = mList.get(position).bankName
         binding.bankAccountNumber.text = mList[position].bankAccNumber.toString()
         binding.bankItemCard.setOnClickListener {
-
+            val dialog = BankDialog(mList[position])
+            dialog.show(fragmentManager,"Bank Dialog")
         }
     }
 

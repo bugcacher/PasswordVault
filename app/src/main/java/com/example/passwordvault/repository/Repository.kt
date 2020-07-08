@@ -31,7 +31,7 @@ class Repository @Inject constructor(private val bankDao: BankDao, private val l
         cardDao.insertCardDetails(cardDetailsItem)
     }
 
-    fun deleteCardDetails(cardNumber: Long){
+    fun deleteCardDetails(cardNumber: String){
         cardDao.deleteCardDetails(cardNumber)
     }
 
@@ -50,4 +50,10 @@ class Repository @Inject constructor(private val bankDao: BankDao, private val l
     fun getAllLoginDetails() : LiveData<List<LoginDetailsItem>>{
         return loginDao.getAllLoginDetails()
     }
+
+    fun getCategoryLoginDetails(category : String) : LiveData<List<LoginDetailsItem>>{
+        return loginDao.getCategoryLoginDetails(category)
+    }
+
+
 }

@@ -12,10 +12,12 @@ import com.example.passwordvault.adapter.CardDetailsAdapter
 import com.example.passwordvault.adapter.LoginDetailsAdapter
 import com.example.passwordvault.databinding.CardsDetailsBinding
 import com.example.passwordvault.viewmodel.DetailsViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * Created by Abhinav Singh on 29,June,2020
  */
+@AndroidEntryPoint
 class CardDetails : Fragment() {
 
     private lateinit var binding: CardsDetailsBinding
@@ -42,12 +44,13 @@ class CardDetails : Fragment() {
     private fun observeValue() {
         viewModel.getAllCardDetails().observe(viewLifecycleOwner, Observer {
             adapter = CardDetailsAdapter(context,it)
+            binding.cardDetailsRecyclerView.adapter = adapter
             adapter.notifyDataSetChanged()
         })
     }
 
     private fun initRecyclerView() {
         binding.cardDetailsRecyclerView.layoutManager = LinearLayoutManager(context)
-        binding.cardDetailsRecyclerView.adapter = adapter
+
     }
 }

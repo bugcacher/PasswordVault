@@ -23,4 +23,7 @@ interface LoginDao {
     @Query("SELECT * FROM LoginDetailsTable")
     fun getAllLoginDetails() : LiveData<List<LoginDetailsItem>>
 
+    @Query("SELECT * FROM LoginDetailsTable WHERE loginCategory = :category")
+    fun getCategoryLoginDetails(category : String) : LiveData<List<LoginDetailsItem>>
+
 }

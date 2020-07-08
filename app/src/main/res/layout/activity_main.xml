@@ -23,12 +23,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
+            app:menu_colorNormal="@color/colorAccent"
+            app:menu_colorPressed="#6B9CE1"
+            app:menu_colorRipple="#6B9CE1"
             android:id="@+id/floatingMenu"
             android:layout_margin="25dp">
             <com.github.clans.fab.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:fab_label="Cards"
+                app:fab_colorNormal="#74A1E1"
+                app:fab_colorPressed="#74A1E1"
+                app:fab_colorRipple="#74A1E1"
                 app:fab_size="mini"
                 android:id="@+id/cardsDetails"/>
             <com.github.clans.fab.FloatingActionButton
@@ -36,11 +42,17 @@
                 android:layout_height="wrap_content"
                 app:fab_label="Login"
                 app:fab_size="mini"
+                app:fab_colorNormal="#74A1E1"
+                app:fab_colorPressed="#74A1E1"
+                app:fab_colorRipple="#74A1E1"
                 android:id="@+id/loginDetails"/>
             <com.github.clans.fab.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:fab_size="mini"
+                app:fab_colorNormal="#74A1E1"
+                app:fab_colorPressed="#74A1E1"
+                app:fab_colorRipple="#74A1E1"
                 app:fab_label="Bank Details"
                 android:id="@+id/bankDetails"/>
         </com.github.clans.fab.FloatingActionMenu>

@@ -45,18 +45,50 @@ class LoginDetails : Fragment() {
 
         initRecyclerView()
         observeValue()
+        setUpOnClickListeners()
 
+    }
+
+    private fun setUpOnClickListeners() {
+        binding.filterSocialButton.setOnClickListener{
+            viewModel.getCategoryLoginDetails("Social").observe(viewLifecycleOwner, Observer{
+                adapter.updateList(it)
+                adapter.notifyDataSetChanged()
+            })
+        }
+
+        binding.filterWorkButton.setOnClickListener{
+            viewModel.getCategoryLoginDetails("Work").observe(viewLifecycleOwner, Observer{
+                adapter.updateList(it)
+                adapter.notifyDataSetChanged()
+            })
+        }
+
+        binding.filterECommerceButton.setOnClickListener{
+            viewModel.getCategoryLoginDetails("E-Commerce").observe(viewLifecycleOwner, Observer{
+                adapter.updateList(it)
+                adapter.notifyDataSetChanged()
+            })
+        }
+
+        binding.filterOtherButton.setOnClickListener{
+            viewModel.getCategoryLoginDetails("Others").observe(viewLifecycleOwner, Observer{
+                adapter.updateList(it)
+                adapter.notifyDataSetChanged()
+            })
+        }
     }
 
     private fun observeValue() {
         viewModel.getAllLoginDetails().observe(viewLifecycleOwner, Observer {
-            adapter = LoginDetailsAdapter(context,it)
+            adapter = LoginDetailsAdapter(context,it,requireActivity().supportFragmentManager)
+            binding.loginDetailsRecyclerView.adapter = adapter
             adapter.notifyDataSetChanged()
         })
     }
 
     private fun initRecyclerView() {
         binding.loginDetailsRecyclerView.layoutManager = LinearLayoutManager(context)
-        binding.loginDetailsRecyclerView.adapter = adapter
+
     }
 }

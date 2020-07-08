@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark">
+    >
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="5dp"
+        android:id="@+id/oldPIN"
+        android:inputType="number"
+        android:hint="Old Master PIN"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/oldPIN"
+        android:padding="5dp"
+        android:id="@+id/newPIN"
+        android:hint="New PIN"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:layout_margin="20dp"
+        android:padding="5dp"
+        android:layout_below="@id/newPIN"
+        android:id="@+id/confirmNewPIN"
+        android:hint="Confirm PIN"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:layout_below="@id/confirmNewPIN"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:id="@+id/changeMasterPIN"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_bg"
+        android:text="Change  PIN"/>
 
 </RelativeLayout>

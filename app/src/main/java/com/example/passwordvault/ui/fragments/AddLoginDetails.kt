@@ -24,7 +24,7 @@ class AddLoginDetails : Fragment(),AdapterView.OnItemSelectedListener{
     private lateinit var viewModel: DetailsViewModel
     private lateinit var binding: AddLoginBinding
     private val categoryList: ArrayList<String> = ArrayList()
-    private lateinit var category : String
+    private var category : String = ""
 
 
     override fun onCreateView(
@@ -38,6 +38,8 @@ class AddLoginDetails : Fragment(),AdapterView.OnItemSelectedListener{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
+
+        initSpinner()
 
         binding.addLoginDetails.setOnClickListener {
             var loginName       = binding.loginNameEt.text.toString().trim()
@@ -53,7 +55,8 @@ class AddLoginDetails : Fragment(),AdapterView.OnItemSelectedListener{
                 loginNotes  = " "
 
             if(valid(loginName,loginEmail,loginPassword)){
-                viewModel.insertLoginDetails(LoginDetailsItem(loginName,loginEmail,loginPassword,loginWebsite,loginNotes,category))
+                val id = loginName + loginEmail.split("@")[0]
+                viewModel.insertLoginDetails(LoginDetailsItem(id,loginName,loginEmail,loginPassword,loginWebsite,loginNotes,category))
                 Toast.makeText(context,"Details Inserted",Toast.LENGTH_SHORT).show()
             }
             else

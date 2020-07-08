@@ -50,13 +50,14 @@ class BankDetails : Fragment() {
 
     private fun observeValue() {
         viewModel.getAllBankDetails().observe(viewLifecycleOwner, Observer {
-            adapter = BankDetailsAdapter(context,it)
+            adapter = BankDetailsAdapter(context,it,requireActivity().supportFragmentManager)
+            binding.bankDetailsRecyclerView.adapter = adapter
             adapter.notifyDataSetChanged()
         })
     }
 
     private fun initRecyclerView() {
         binding.bankDetailsRecyclerView.layoutManager = LinearLayoutManager(context)
-        binding.bankDetailsRecyclerView.adapter = adapter
+
     }
 }

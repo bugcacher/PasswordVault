@@ -4,15 +4,17 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.passwordvault.R
 import com.example.passwordvault.databinding.LoginListItemBinding
 import com.example.passwordvault.model.LoginDetailsItem
+import com.example.passwordvault.ui.dialog.LoginDialog
 
 /**
  * Created by Abhinav Singh on 07,July,2020
  */
-class LoginDetailsAdapter(private var mContext : Context?, private var mList : List<LoginDetailsItem>) : RecyclerView.Adapter<LoginDetailsAdapter.LoginDetailsViewHolder>() {
+class LoginDetailsAdapter(private var mContext : Context?, private var mList : List<LoginDetailsItem>,private var fragmentManager : FragmentManager) : RecyclerView.Adapter<LoginDetailsAdapter.LoginDetailsViewHolder>() {
     private  lateinit var binding : LoginListItemBinding
 
 
@@ -31,7 +33,8 @@ class LoginDetailsAdapter(private var mContext : Context?, private var mList : L
         binding.itemid.text = mList[position].loginEmail
         setItemIcon(binding.itemIcon,mList[position].loginName)
         binding.loginItemCard.setOnClickListener {
-
+            val dialog = LoginDialog(mList[position])
+            dialog.show(fragmentManager,"Login Dialog")
         }
     }
 
@@ -51,5 +54,10 @@ class LoginDetailsAdapter(private var mContext : Context?, private var mList : L
 
     class LoginDetailsViewHolder(binding: LoginListItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
+    }
+
+    public fun updateList(updatedList : List<LoginDetailsItem>){
+        mList = updatedList
+        notifyDataSetChanged()
     }
 }

@@ -18,7 +18,7 @@ interface CardDao {
     fun insertCardDetails(cardDetails : CardDetailsItem)
 
     @Query("DELETE FROM CardDetailsTable WHERE cardNumber = :cardNumber")
-    fun deleteCardDetails(cardNumber : Long)
+    fun deleteCardDetails(cardNumber : String)
 
     @Query("SELECT * FROM CardDetailsTable")
     fun getAllCardDetails() : LiveData<List<CardDetailsItem>>

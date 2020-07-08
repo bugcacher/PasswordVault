@@ -1,33 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    >
-    <Spinner
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-       android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
-        android:id="@+id/loginTypeSpinner"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:layout_margin="20dp"
-        android:text="Category"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:text="Filter"
-        android:layout_margin="10dp"
-        android:padding="5dp"
-        android:background="@drawable/button_bg"
-        />
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<HorizontalScrollView
+    android:layout_width="match_parent"
+    android:id="@+id/scrollView"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="5dp"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            android:layout_width="80dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginLeft="10dp"
+            app:cardBackgroundColor="#F66156"
+            android:id="@+id/filterSocialButton"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="#fff"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:text="Social"/>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="80dp"
+            app:cardCornerRadius="10dp"
+            android:id="@+id/filterWorkButton"
+            app:cardBackgroundColor="#A8DD6B"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="#fff"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:text="Work"/>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            app:cardCornerRadius="10dp"
+            android:id="@+id/filterECommerceButton"
+            android:layout_marginLeft="20dp"
+            app:cardBackgroundColor="#F4E451"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="#fff"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:text="E-Commerce"/>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="80dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginLeft="20dp"
+            app:cardBackgroundColor="#77B0DD"
+            android:id="@+id/filterOtherButton"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="#fff"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Other"/>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</HorizontalScrollView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/loginTypeSpinner"
-        android:layout_margin="10dp"
+        android:layout_below="@id/scrollView"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:id="@+id/loginDetailsRecyclerView"/>
 
 </RelativeLayout>

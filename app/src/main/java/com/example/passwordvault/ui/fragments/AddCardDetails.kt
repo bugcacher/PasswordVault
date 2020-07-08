@@ -1,26 +1,23 @@
 package com.example.passwordvault.ui.fragments
 
 import android.R
-import android.content.Context
-import android.graphics.Color
+import android.R.string
 import android.os.Bundle
+import android.text.TextUtils.split
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.passwordvault.databinding.AddCardBinding
 import com.example.passwordvault.model.CardDetailsItem
 import com.example.passwordvault.viewmodel.DetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.*
-import kotlin.collections.ArrayList
-import android.widget.AdapterView.OnItemSelectedListener as OnItemSelectedListener1
+import javax.security.auth.login.LoginException
 
 
 /**
@@ -54,10 +51,10 @@ class AddCardDetails : Fragment(), AdapterView.OnItemSelectedListener{
             var cardExpiry = binding.cardExpiryEt.text.toString().trim()
 
             if(valid(cardNumber,cardHolder,cardExpiry,cardCVV)){
-                var split = cardExpiry.split("-")
+                var split : Array<String> = cardExpiry.split("/").toTypedArray()
 
-                viewModel.insertCardDetails(CardDetailsItem(cardHolder,cardIssuer,cardNumber.toLong(),
-                    split[0],split[1],cardCVV.toInt()))
+                viewModel.insertCardDetails(CardDetailsItem(cardHolder,cardIssuer,cardNumber,
+                    split[0],split[1],cardCVV))
                 Toast.makeText(context,"Details Inserted",Toast.LENGTH_SHORT).show()
             }
             else
