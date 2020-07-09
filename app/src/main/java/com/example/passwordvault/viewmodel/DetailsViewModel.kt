@@ -55,8 +55,8 @@ class DetailsViewModel @ViewModelInject constructor(private val repository: Repo
         repository.insertLoginDetails(loginDetailsItem)
     }
 
-    fun deleteLoginDetails(email: String){
-        repository.deleteLoginDetails(email)
+    fun deleteLoginDetails(id: String){
+        repository.deleteLoginDetails(id)
     }
 
 

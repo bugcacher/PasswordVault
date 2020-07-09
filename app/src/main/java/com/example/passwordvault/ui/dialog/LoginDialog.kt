@@ -7,7 +7,9 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.transition.Visibility
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDialog
@@ -28,12 +30,23 @@ class LoginDialog(private val loginItem : LoginDetailsItem) : DialogFragment() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setView(binding.root)
 
+
         binding.loginCategory.text = loginItem.loginCategory
         binding.loginEmailEt.text = loginItem.loginEmail
         binding.loginNameEt.text = loginItem.loginName
         binding.loginPasswordEt.text = loginItem.loginPassword
         binding.loginWebsiteEt.text = loginItem.loginWebsite
         binding.loginNoteEt.text = loginItem.loginNotes
+
+        if(loginItem.loginWebsite.trim().isEmpty()){
+            binding.goToWebsite.visibility = View.GONE
+            binding.loginWebsiteEt.visibility = View.GONE
+            binding.loginWebsiteIcon.visibility = View.GONE
+        }
+        if(loginItem.loginNotes.trim().isEmpty()){
+            binding.loginNoteEt.visibility = View.GONE
+            binding.loginNoteIcon.visibility = View.GONE
+        }
 
         setUpOnClick()
 

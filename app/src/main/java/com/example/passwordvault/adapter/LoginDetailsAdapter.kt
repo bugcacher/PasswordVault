@@ -60,4 +60,8 @@ class LoginDetailsAdapter(private var mContext : Context?, private var mList : L
         mList = updatedList
         notifyDataSetChanged()
     }
+
+    fun getItemAt(position : Int) : LoginDetailsItem{
+        return mList[position]
+    }
 }

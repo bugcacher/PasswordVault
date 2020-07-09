@@ -17,8 +17,8 @@ interface LoginDao {
     @Insert
     fun insertLoginDetails(loginDetails : LoginDetailsItem)
 
-    @Query("DELETE FROM LoginDetailsTable WHERE loginEmail = :email")
-    fun deleteLoginDetails(email : String)
+    @Query("DELETE FROM LoginDetailsTable WHERE id = :id")
+    fun deleteLoginDetails(id : String)
 
     @Query("SELECT * FROM LoginDetailsTable")
     fun getAllLoginDetails() : LiveData<List<LoginDetailsItem>>

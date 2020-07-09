@@ -9,6 +9,7 @@ import com.example.passwordvault.R
 import com.example.passwordvault.databinding.DebitCardItemBinding
 import com.example.passwordvault.databinding.LoginListItemBinding
 import com.example.passwordvault.model.CardDetailsItem
+import com.wajahatkarim3.easyflipview.EasyFlipView
 
 /**
  * Created by Abhinav Singh on 07,July,2020
@@ -36,11 +37,12 @@ class CardDetailsAdapter(private var mContext : Context?, private var mList : Li
         binding.cardNumberPart2.text = splitNumber[1]
         binding.cardNumberPart3.text = splitNumber[2]
         binding.cardNumberPart4.text = splitNumber[3]
+        binding.debitCardCVV.text    = mList[position].cardCvv
 
-        binding.debitCardItemCard.setOnClickListener {
-
+        binding.flipView.setOnClickListener {
+            it as EasyFlipView
+            it.flipTheView()
         }
-
     }
 
     private fun setItemIcon(itemIcon: ImageView,name : String) {
@@ -54,6 +56,5 @@ class CardDetailsAdapter(private var mContext : Context?, private var mList : Li
     }
 
     class CardDetailsViewHolder(binding: DebitCardItemBinding) : RecyclerView.ViewHolder(binding.root) {
-
     }
 }

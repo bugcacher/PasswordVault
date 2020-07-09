@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:rowCount="6"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="wrap_content">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -10,7 +10,8 @@
         android:textSize="20dp"
         android:text="Social"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
         android:hint="Login Name"/>
     <ImageView
         android:layout_width="30dp"
@@ -29,7 +30,7 @@
         android:gravity="center_vertical"
         android:layout_toRightOf="@id/loginNameIcon"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="90dp"
         android:hint="Login Name"/>
     <ImageView
         android:layout_width="30dp"
@@ -43,7 +44,7 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginTop="160dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="20dp"
         android:layout_alignParentRight="true"
         android:id="@+id/copyEmail"
         android:src="@drawable/ic_content_copy_black_24dp"
@@ -57,7 +58,7 @@
         android:layout_toRightOf="@id/loginEmailIcon"
         android:layout_marginLeft="25dp"
         android:layout_toLeftOf="@id/copyEmail"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="150dp"
         android:hint="Email or UserName"/>
     <ImageView
         android:layout_width="30dp"
@@ -71,7 +72,7 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginTop="220dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="20dp"
         android:layout_alignParentRight="true"
         android:id="@+id/copyPassword"
         android:src="@drawable/ic_content_copy_black_24dp"
@@ -85,7 +86,8 @@
         android:gravity="center_vertical"
         android:layout_toRightOf="@id/loginPasswordIcon"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="210dp"
         android:hint="Password"/>
     <ImageView
         android:layout_width="30dp"
@@ -99,7 +101,7 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginTop="285dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="20dp"
         android:layout_alignParentRight="true"
         android:id="@+id/goToWebsite"
         android:src="@drawable/www"
@@ -113,7 +115,8 @@
         android:gravity="center_vertical"
         android:layout_toRightOf="@id/loginWebsiteIcon"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="270dp"
         android:hint="Website (Optional)"/>
     <ImageView
         android:layout_width="30dp"
@@ -130,8 +133,9 @@
         android:layout_marginRight="20dp"
         android:gravity="center_vertical"
         android:layout_toRightOf="@id/loginNoteIcon"
+        android:layout_marginBottom="15dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="330dp"
         android:hint="Addition Notes (Optional)"/>
 
 

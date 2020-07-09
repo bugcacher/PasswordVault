@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.passwordvault.databinding.BankListItemBinding
 import com.example.passwordvault.model.BankDetailsItem
+import com.example.passwordvault.model.LoginDetailsItem
 import com.example.passwordvault.ui.dialog.BankDialog
 
 /**
@@ -38,5 +39,8 @@ class BankDetailsAdapter(private var mContext : Context?, private var mList : Li
 
     class BankDetailsViewHolder(binding: BankListItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
+    }
+    fun getItemAt(position : Int) : BankDetailsItem {
+        return mList[position]
     }
 }

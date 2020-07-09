@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#EF5350"
+    app:cardCornerRadius="15dp"
+    android:layout_margin="10dp"
+    android:id="@+id/debitCardItemCard"
+    android:layout_height="200dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:background="#EF5350"
+        android:id="@+id/cardNumber"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="#EF5350"
+            android:src="@drawable/ic_mc_symbol"
+            android:id="@+id/cardIssuer"/>
+        <GridLayout
+            android:layout_width="match_parent"
+            android:columnCount="4"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:rowCount="1"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/cardNumberPart1"
+                android:textColor="#fff"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:text="9 6 3 2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/cardNumberPart2"
+                android:textColor="#fff"
+                android:layout_gravity="center"
+                android:layout_columnWeight="1"
+                android:text="9 6 3 2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/cardNumberPart3"
+                android:textColor="#fff"
+                android:layout_gravity="center"
+                android:layout_columnWeight="1"
+                android:text="9 6 3 2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/cardNumberPart4"
+                android:layout_gravity="center"
+                android:textColor="#fff"
+                android:layout_columnWeight="1"
+                android:text="X X X X"/>
+        </GridLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Card Holder"
+            android:textColor="#DAD7D9"
+            android:layout_below="@id/cardIssuer"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="70dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Abhinav Singh"
+            android:id="@+id/cardHolder"
+            android:textColor="#fff"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/cardIssuer"
+            android:layout_marginTop="90dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expiry Date"
+            android:layout_alignParentRight="true"
+            android:textColor="#DAD7D9"
+            android:layout_marginRight="20dp"
+            android:layout_below="@id/cardIssuer"
+            android:layout_marginTop="70dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="02/25"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/cardExpiry"
+            android:textColor="#fff"
+            android:layout_below="@id/cardIssuer"
+            android:layout_marginTop="90dp"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

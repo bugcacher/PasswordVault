@@ -43,8 +43,8 @@ class Repository @Inject constructor(private val bankDao: BankDao, private val l
         loginDao.insertLoginDetails(loginDetailsItem)
     }
 
-    fun deleteLoginDetails(email: String){
-        loginDao.deleteLoginDetails(email)
+    fun deleteLoginDetails(id: String){
+        loginDao.deleteLoginDetails(id)
     }
 
     fun getAllLoginDetails() : LiveData<List<LoginDetailsItem>>{
