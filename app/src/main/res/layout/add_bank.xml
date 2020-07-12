@@ -8,7 +8,7 @@
         android:layout_marginTop="105dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/bankIcon"
-        android:src="@drawable/ic_pay"
+        android:src="@drawable/bank_1"
         />
     <EditText
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
         android:layout_marginTop="220dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/bankIFSCIcon"
-        android:src="@drawable/ic_calendar"
+        android:src="@drawable/password"
         />
     <EditText
         android:layout_width="match_parent"
@@ -59,7 +59,7 @@
         android:layout_marginTop="285dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/bankAddressIcon"
-        android:src="@drawable/ic_cvv"
+        android:src="@drawable/settings"
         />
     <EditText
         android:layout_width="match_parent"

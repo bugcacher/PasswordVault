@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:title="Login"
-        android:icon="@drawable/password_entered"
+        android:icon="@drawable/password"
         android:id="@+id/loginDetails"/>
     <item
         android:title="Cards"
-        android:icon="@drawable/password_entered"
+        android:icon="@drawable/credit_card"
         android:id="@+id/cardDetails"/>
     <item
         android:title="Banks"
-        android:icon="@drawable/password_entered"
+        android:icon="@drawable/bank"
         android:id="@+id/bankDetails"/>
     <item
         android:title="Password Generator"
-        android:icon="@drawable/password_entered"
+        android:icon="@drawable/padlock"
         android:id="@+id/passwordGenerator"/>
     <item
         android:title="Settings"
-        android:icon="@drawable/password_entered"
+        android:icon="@drawable/settings"
         android:id="@+id/settings"/>
 
 

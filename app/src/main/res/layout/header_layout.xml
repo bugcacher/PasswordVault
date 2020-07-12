@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="176dp">
+    android:layout_width="match_parent" android:layout_height="176dp"
+    android:background="#353B3E">
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="#88C541"/>
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:id="@+id/header_icon"
+        android:src="@drawable/user_1"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Abhinav"
+        android:layout_marginLeft="20dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:layout_below="@id/header_icon"
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>

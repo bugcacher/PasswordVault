@@ -22,7 +22,7 @@
         android:layout_marginTop="105dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/loginNameIcon"
-        android:src="@drawable/ic_pay"
+        android:src="@drawable/document"
         />
     <EditText
         android:layout_width="match_parent"
@@ -56,7 +56,7 @@
         android:layout_marginTop="220dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/loginPasswordIcon"
-        android:src="@drawable/ic_calendar"
+        android:src="@drawable/password"
         />
     <EditText
         android:layout_width="match_parent"
@@ -73,7 +73,7 @@
         android:layout_marginTop="285dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/loginWebsiteIcon"
-        android:src="@drawable/ic_cvv"
+        android:src="@drawable/www"
         />
     <EditText
         android:layout_width="match_parent"
@@ -90,7 +90,7 @@
         android:layout_marginTop="345dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/loginNoteIcon"
-        android:src="@drawable/ic_cvv"
+        android:src="@drawable/document"
         />
     <EditText
         android:layout_width="match_parent"

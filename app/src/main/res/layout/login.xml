@@ -5,7 +5,7 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
-        android:src="@color/colorPrimary"
+        android:src="@drawable/vault"
         android:layout_marginTop="50dp"
         android:id="@+id/appIcon"/>
 

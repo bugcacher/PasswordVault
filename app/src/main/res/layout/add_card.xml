@@ -49,7 +49,7 @@
         android:layout_toRightOf="@id/cardIcon"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="140dp"
-        android:hint="Card Number"/>
+        android:hint="Card Holder"/>
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
