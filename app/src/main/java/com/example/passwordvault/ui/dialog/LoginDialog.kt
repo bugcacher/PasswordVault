@@ -75,7 +75,7 @@ class LoginDialog(private val loginItem : LoginDetailsItem) : DialogFragment() {
         }
 
         binding.goToWebsite.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(loginItem.loginWebsite))
+            val intent = Intent(Intent.ACTION_VIEW).setData(Uri.parse("http://" + loginItem.loginWebsite))
             requireActivity().startActivity(intent)
         }
 
