@@ -11,17 +11,16 @@
         android:text="Social"
         android:layout_marginLeft="25dp"
         android:textStyle="bold"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:hint="Login Name"/>
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="105dp"
+        android:layout_marginTop="67dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/loginNameIcon"
         android:src="@drawable/ic_pay"
         />
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -30,12 +29,12 @@
         android:gravity="center_vertical"
         android:layout_toRightOf="@id/loginNameIcon"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="50dp"
         android:hint="Login Name"/>
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="122dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/loginEmailIcon"
         android:src="@drawable/user"
@@ -43,7 +42,7 @@
     <ImageView
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="122dp"
         android:layout_marginRight="20dp"
         android:layout_alignParentRight="true"
         android:id="@+id/copyEmail"
@@ -58,12 +57,12 @@
         android:layout_toRightOf="@id/loginEmailIcon"
         android:layout_marginLeft="25dp"
         android:layout_toLeftOf="@id/copyEmail"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="110dp"
         android:hint="Email or UserName"/>
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="182dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/loginPasswordIcon"
         android:src="@drawable/ic_calendar"
@@ -71,7 +70,7 @@
     <ImageView
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="182dp"
         android:layout_marginRight="20dp"
         android:layout_alignParentRight="true"
         android:id="@+id/copyPassword"
@@ -87,12 +86,12 @@
         android:layout_toRightOf="@id/loginPasswordIcon"
         android:layout_marginLeft="25dp"
         android:layout_marginBottom="15dp"
-        android:layout_marginTop="210dp"
+        android:layout_marginTop="170dp"
         android:hint="Password"/>
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="285dp"
+        android:layout_marginTop="247dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/loginWebsiteIcon"
         android:src="@drawable/ic_cvv"
@@ -100,7 +99,7 @@
     <ImageView
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_marginTop="285dp"
+        android:layout_marginTop="247dp"
         android:layout_marginRight="20dp"
         android:layout_alignParentRight="true"
         android:id="@+id/goToWebsite"
@@ -116,12 +115,12 @@
         android:layout_toRightOf="@id/loginWebsiteIcon"
         android:layout_marginLeft="25dp"
         android:layout_marginBottom="15dp"
-        android:layout_marginTop="270dp"
+        android:layout_marginTop="230dp"
         android:hint="Website (Optional)"/>
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="345dp"
+        android:layout_marginTop="307dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/loginNoteIcon"
         android:src="@drawable/ic_cvv"
@@ -135,7 +134,7 @@
         android:layout_toRightOf="@id/loginNoteIcon"
         android:layout_marginBottom="15dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="330dp"
+        android:layout_marginTop="290dp"
         android:hint="Addition Notes (Optional)"/>
 
 

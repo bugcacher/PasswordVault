@@ -7,15 +7,15 @@
         android:id="@+id/loginDetails"/>
     <item
         android:title="Cards"
-        android:icon="@drawable/credit_card"
+        android:icon="@drawable/ic_pay"
         android:id="@+id/cardDetails"/>
     <item
         android:title="Banks"
-        android:icon="@drawable/bank"
+        android:icon="@drawable/bank_1"
         android:id="@+id/bankDetails"/>
     <item
         android:title="Password Generator"
-        android:icon="@drawable/padlock"
+        android:icon="@drawable/password1"
         android:id="@+id/passwordGenerator"/>
     <item
         android:title="Settings"

@@ -1,6 +1,7 @@
 package com.example.passwordvault.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,6 +28,10 @@ class LoginDetails : Fragment() {
     private lateinit var binding: LoginDetailsBinding
     private lateinit var viewModel : DetailsViewModel
     private lateinit var adapter : LoginDetailsAdapter
+    private lateinit var socialList : MutableList<LoginDetailsItem>
+    private lateinit var workList : MutableList<LoginDetailsItem>
+    private lateinit var eCommerceList : MutableList<LoginDetailsItem>
+    private lateinit var othersList : MutableList<LoginDetailsItem>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,42 +54,51 @@ class LoginDetails : Fragment() {
 
     }
 
+
     private fun setUpOnClickListeners() {
         binding.filterSocialButton.setOnClickListener{
-            viewModel.getCategoryLoginDetails("Social").observe(viewLifecycleOwner, Observer{
-                adapter.updateList(it)
-                adapter.notifyDataSetChanged()
-            })
+            adapter.updateList(socialList)
         }
 
         binding.filterWorkButton.setOnClickListener{
-            viewModel.getCategoryLoginDetails("Work").observe(viewLifecycleOwner, Observer{
-                adapter.updateList(it)
-                adapter.notifyDataSetChanged()
-            })
+            adapter.updateList(workList)
         }
 
         binding.filterECommerceButton.setOnClickListener{
-            viewModel.getCategoryLoginDetails("E-Commerce").observe(viewLifecycleOwner, Observer{
-                adapter.updateList(it)
-                adapter.notifyDataSetChanged()
-            })
+            adapter.updateList(eCommerceList)
         }
 
         binding.filterOtherButton.setOnClickListener{
-            viewModel.getCategoryLoginDetails("Others").observe(viewLifecycleOwner, Observer{
-                adapter.updateList(it)
-                adapter.notifyDataSetChanged()
-            })
+            adapter.updateList(othersList)
         }
     }
 
     private fun observeValue() {
         viewModel.getAllLoginDetails().observe(viewLifecycleOwner, Observer {
-            adapter = LoginDetailsAdapter(context,it,requireActivity().supportFragmentManager)
+
+            adapter = LoginDetailsAdapter(context,it.toMutableList(),requireActivity().supportFragmentManager)
             binding.loginDetailsRecyclerView.adapter = adapter
             adapter.notifyDataSetChanged()
         })
+
+        viewModel.getCategoryLoginDetails("Social").observe(viewLifecycleOwner, Observer{
+            socialList = it.toMutableList()
+        })
+
+        viewModel.getCategoryLoginDetails("Work").observe(viewLifecycleOwner, Observer{
+            workList = it.toMutableList()
+        })
+
+        viewModel.getCategoryLoginDetails("Others").observe(viewLifecycleOwner, Observer{
+            othersList = it.toMutableList()
+
+        })
+
+        viewModel.getCategoryLoginDetails("E-Commerce").observe(viewLifecycleOwner, Observer{
+           eCommerceList = it.toMutableList()
+
+        })
+
     }
 
     private fun initRecyclerView() {

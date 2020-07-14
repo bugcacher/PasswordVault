@@ -42,7 +42,7 @@
         android:layout_marginTop="220dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/bankIFSCIcon"
-        android:src="@drawable/password"
+        android:src="@drawable/ifsc"
         />
     <EditText
         android:layout_width="match_parent"
@@ -56,10 +56,10 @@
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="285dp"
+        android:layout_marginTop="280dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/bankAddressIcon"
-        android:src="@drawable/settings"
+        android:src="@drawable/home"
         />
     <EditText
         android:layout_width="match_parent"

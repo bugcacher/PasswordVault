@@ -1,10 +1,12 @@
 package com.example.passwordvault.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.FragmentManager
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.passwordvault.R
 import com.example.passwordvault.databinding.LoginListItemBinding
@@ -14,7 +16,7 @@ import com.example.passwordvault.ui.dialog.LoginDialog
 /**
  * Created by Abhinav Singh on 07,July,2020
  */
-class LoginDetailsAdapter(private var mContext : Context?, private var mList : List<LoginDetailsItem>,private var fragmentManager : FragmentManager) : RecyclerView.Adapter<LoginDetailsAdapter.LoginDetailsViewHolder>() {
+class LoginDetailsAdapter(private var mContext : Context?, private var mList : MutableList<LoginDetailsItem>,private var fragmentManager : FragmentManager) : RecyclerView.Adapter<LoginDetailsAdapter.LoginDetailsViewHolder>() {
     private  lateinit var binding : LoginListItemBinding
 
 
@@ -29,7 +31,7 @@ class LoginDetailsAdapter(private var mContext : Context?, private var mList : L
     }
 
     override fun onBindViewHolder(holder: LoginDetailsViewHolder, position: Int) {
-        binding.itemTitle.text = mList.get(position).loginName
+        binding.itemTitle.text = mList[position].loginName
         binding.itemid.text = mList[position].loginEmail
         setItemIcon(binding.itemIcon,mList[position].loginName)
         binding.loginItemCard.setOnClickListener {
@@ -40,28 +42,55 @@ class LoginDetailsAdapter(private var mContext : Context?, private var mList : L
 
     private fun setItemIcon(itemIcon: ImageView,name : String) {
         when(name.toLowerCase().trim()){
-            "google" -> itemIcon.setImageResource(R.drawable.ic_mastercard)
-            "github" -> itemIcon.setImageResource(R.drawable.ic_mastercard)
-            "slack" -> itemIcon.setImageResource(R.drawable.ic_mastercard)
-            "amazon" -> itemIcon.setImageResource(R.drawable.ic_mastercard)
-            "flipkart" -> itemIcon.setImageResource(R.drawable.ic_mastercard)
-            "facebook" -> itemIcon.setImageResource(R.drawable.ic_mastercard)
-            "instagram" -> itemIcon.setImageResource(R.drawable.ic_mastercard)
-            "reddit" -> itemIcon.setImageResource(R.drawable.ic_mastercard)
-            "pinterest" -> itemIcon.setImageResource(R.drawable.ic_mastercard)
+            "google" -> itemIcon.setImageResource(R.drawable.gmail)
+            "github" -> itemIcon.setImageResource(R.drawable.github)
+            "slack" -> itemIcon.setImageResource(R.drawable.slack)
+            "amazon" -> itemIcon.setImageResource(R.drawable.amazon)
+            "flipkart" -> itemIcon.setImageResource(R.drawable.flipkart)
+            "facebook" -> itemIcon.setImageResource(R.drawable.facebook)
+            "instagram" -> itemIcon.setImageResource(R.drawable.instagram)
+            "reddit" -> itemIcon.setImageResource(R.drawable.reddit)
+            "pinterest" -> itemIcon.setImageResource(R.drawable.pinterest)
+            "linkedin" -> itemIcon.setImageResource(R.drawable.pinterest)
+            "spotify" -> itemIcon.setImageResource(R.drawable.pinterest)
+            "dribble" -> itemIcon.setImageResource(R.drawable.pinterest)
+            "teamviewer" -> itemIcon.setImageResource(R.drawable.pinterest)
         }
     }
 
-    class LoginDetailsViewHolder(binding: LoginListItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    class LoginDetailsViewHolder(private val binding: LoginListItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
     }
 
-    public fun updateList(updatedList : List<LoginDetailsItem>){
-        mList = updatedList
-        notifyDataSetChanged()
+    fun updateList(updatedList : MutableList<LoginDetailsItem>){
+        val callback = CustomCallback(mList,updatedList)
+        val result  = DiffUtil.calculateDiff(callback)
+
+        mList.clear()
+        mList.addAll(updatedList)
+        result.dispatchUpdatesTo(this)
     }
 
     fun getItemAt(position : Int) : LoginDetailsItem{
         return mList[position]
+    }
+
+    class CustomCallback(private val oldList: MutableList<LoginDetailsItem>, private val newList: MutableList<LoginDetailsItem>) : DiffUtil.Callback() {
+        override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+                return oldItemPosition == newItemPosition
+        }
+
+        override fun getOldListSize(): Int {
+            return oldList.size
+        }
+
+        override fun getNewListSize(): Int {
+            return newList.size
+        }
+
+        override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+            return oldList[oldItemPosition] == newList[newItemPosition]
+        }
+
     }
 }

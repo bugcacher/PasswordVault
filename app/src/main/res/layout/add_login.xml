@@ -22,7 +22,7 @@
         android:layout_marginTop="105dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/loginNameIcon"
-        android:src="@drawable/document"
+        android:src="@drawable/identity"
         />
     <EditText
         android:layout_width="match_parent"
@@ -56,7 +56,7 @@
         android:layout_marginTop="220dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/loginPasswordIcon"
-        android:src="@drawable/password"
+        android:src="@drawable/password1"
         />
     <EditText
         android:layout_width="match_parent"

@@ -1,9 +1,12 @@
 package com.example.passwordvault.adapter
 
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.passwordvault.R
 import com.example.passwordvault.databinding.DebitCardItemBinding
@@ -43,6 +46,21 @@ class CardDetailsAdapter(private var mContext : Context?, private var mList : Li
             it as EasyFlipView
             it.flipTheView()
         }
+
+        binding.flipView.setOnLongClickListener {
+            it as EasyFlipView
+
+            var clipboardManager : ClipboardManager = mContext?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            if(clipboardManager.hasPrimaryClip()){
+                var number = mList[position].cardNumber
+                number = number.replace(Regex("""[-]"""), "")
+                var data : ClipData = ClipData.newPlainText("copied text",number)
+                clipboardManager.setPrimaryClip(data)
+            }
+            Toast.makeText(mContext,"Copied to clipboard", Toast.LENGTH_SHORT).show()
+            return@setOnLongClickListener true
+        }
+
     }
 
     private fun setItemIcon(itemIcon: ImageView,name : String) {

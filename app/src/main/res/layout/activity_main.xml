@@ -35,6 +35,7 @@
                 app:fab_colorNormal="#74A1E1"
                 app:fab_colorPressed="#74A1E1"
                 app:fab_colorRipple="#74A1E1"
+                android:src="@drawable/ic_credit_card_black_24dp"
                 app:fab_size="mini"
                 android:id="@+id/cardsDetails"/>
             <com.github.clans.fab.FloatingActionButton
@@ -44,6 +45,7 @@
                 app:fab_size="mini"
                 app:fab_colorNormal="#74A1E1"
                 app:fab_colorPressed="#74A1E1"
+                android:src="@drawable/ic_desktop_windows_black_24dp"
                 app:fab_colorRipple="#74A1E1"
                 android:id="@+id/loginDetails"/>
             <com.github.clans.fab.FloatingActionButton
@@ -53,6 +55,7 @@
                 app:fab_colorNormal="#74A1E1"
                 app:fab_colorPressed="#74A1E1"
                 app:fab_colorRipple="#74A1E1"
+                android:src="@drawable/ic_account_balance_black_24dp"
                 app:fab_label="Bank Details"
                 android:id="@+id/bankDetails"/>
         </com.github.clans.fab.FloatingActionMenu>
@@ -63,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/navigation_view"
-        app:headerLayout="@layout/header_layout"
+        android:fitsSystemWindows="true"
         android:layout_gravity="start|left"
         app:menu="@menu/drawer_menu"
         />
