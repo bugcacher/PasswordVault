@@ -17,6 +17,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import com.example.passwordvault.databinding.AddBankBinding
 import com.example.passwordvault.databinding.AddCardBinding
 import com.example.passwordvault.db.BankDao
@@ -57,6 +59,8 @@ class AddBankDetails : Fragment(){
             if(valid(bankName,bankAccNumber,bankIFSC,bankAddress)){
                 viewModel.insertBankDetails(BankDetailsItem(bankName,bankAccNumber.toLong(),bankIFSC,bankAddress))
                 Toast.makeText(context,"Details Inserted",Toast.LENGTH_SHORT).show()
+                val action = AddBankDetailsDirections.actionAddBankDetailsToBankDetails()
+                findNavController().navigate(action)
             }
             else
                 Toast.makeText(context,"Please fill all blanks",Toast.LENGTH_SHORT).show()

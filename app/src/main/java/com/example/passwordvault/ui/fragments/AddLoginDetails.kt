@@ -10,8 +10,11 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.passwordvault.databinding.AddLoginBinding
 import com.example.passwordvault.model.LoginDetailsItem
+import com.example.passwordvault.ui.dialog.PasswordGeneratorDialog
 import com.example.passwordvault.viewmodel.DetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,7 +23,7 @@ import dagger.hilt.android.AndroidEntryPoint
  * Created by Abhinav Singh on 01,July,2020
  */
 @AndroidEntryPoint
-class AddLoginDetails : Fragment(),AdapterView.OnItemSelectedListener{
+class AddLoginDetails : Fragment(),AdapterView.OnItemSelectedListener,PasswordGeneratorDialog.OnCopyListener{
     private lateinit var viewModel: DetailsViewModel
     private lateinit var binding: AddLoginBinding
     private val categoryList: ArrayList<String> = ArrayList()
@@ -58,9 +61,16 @@ class AddLoginDetails : Fragment(),AdapterView.OnItemSelectedListener{
                 val id = loginName + loginEmail.split("@")[0]
                 viewModel.insertLoginDetails(LoginDetailsItem(id,loginName,loginEmail,loginPassword,loginWebsite,loginNotes,category))
                 Toast.makeText(context,"Details Inserted",Toast.LENGTH_SHORT).show()
+                val action = AddLoginDetailsDirections.actionAddLoginDetailsToLoginDetails()
+                findNavController().navigate(action)
             }
             else
                 Toast.makeText(context,"Please fill all blanks",Toast.LENGTH_SHORT).show()
+        }
+
+        binding.generatePassword.setOnClickListener {
+            val dialog = PasswordGeneratorDialog()
+            dialog.show(childFragmentManager,"Dialog")
         }
     }
 
@@ -92,4 +102,10 @@ class AddLoginDetails : Fragment(),AdapterView.OnItemSelectedListener{
         if(p2 != 0)
             category = categoryList[p2]
     }
+
+    override fun sendPassword(password: String) {
+        binding.loginPasswordEt.setText(password)
+    }
+
+
 }

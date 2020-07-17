@@ -10,7 +10,7 @@
     android:textSize="24dp"
     android:text="Issuer"/>
     <Spinner
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="40dp"
         android:layout_alignParentRight="true"
@@ -29,6 +29,7 @@
         android:layout_height="60dp"
         android:id="@+id/cardNumberEt"
         android:layout_marginRight="20dp"
+        android:inputType="number"
         android:layout_toRightOf="@id/cardIcon"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="80dp"
@@ -80,6 +81,7 @@
         android:layout_height="60dp"
         android:id="@+id/cardCvvEt"
         android:layout_marginRight="20dp"
+        android:inputType="number"
         android:layout_toRightOf="@id/cardIcon"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="260dp"

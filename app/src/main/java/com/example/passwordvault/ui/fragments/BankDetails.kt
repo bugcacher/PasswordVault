@@ -46,7 +46,7 @@ class BankDetails : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
-
+        setUpItemTouchHelper()
         initRecyclerView()
         observeValue()
 

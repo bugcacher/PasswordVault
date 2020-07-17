@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
-        android:background="#EF5350"
+        android:background="#BC4F4D"
         android:id="@+id/cardNumber"
         android:layout_height="match_parent">
         <View

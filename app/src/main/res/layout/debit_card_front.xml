@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="#EF5350"
+    app:cardBackgroundColor="#ED6033"
     app:cardCornerRadius="15dp"
     android:layout_margin="10dp"
     android:id="@+id/debitCardItemCard"
@@ -10,14 +10,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_margin="15dp"
-        android:background="#EF5350"
+        android:background="#F3724A"
         android:id="@+id/cardNumber"
         android:layout_height="match_parent">
         <ImageView
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:background="#EF5350"
-            android:src="@drawable/ic_mc_symbol"
+            android:src="@drawable/ic_mastercard"
             android:id="@+id/cardIssuer"/>
         <GridLayout
             android:layout_width="match_parent"

@@ -30,6 +30,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="#EF5350"
+                android:id="@+id/backRelativeLayout"
                 android:layout_height="match_parent">
                 <View
                     android:layout_width="match_parent"
@@ -91,12 +92,11 @@
                 android:layout_width="match_parent"
                 android:layout_margin="15dp"
                 android:background="#EF5350"
-                android:id="@+id/cardNumber"
+                android:id="@+id/frontRelativeLayout"
                 android:layout_height="match_parent">
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="50dp"
-                    android:background="#EF5350"
                     android:src="@drawable/ic_mc_symbol"
                     android:id="@+id/cardIssuer"/>
                 <GridLayout

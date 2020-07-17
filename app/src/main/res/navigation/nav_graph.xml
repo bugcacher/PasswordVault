@@ -26,14 +26,29 @@
     <fragment
         android:id="@+id/addCardDetails"
         android:name="com.example.passwordvault.ui.fragments.AddCardDetails"
-        android:label="AddCardDetails" />
+        android:label="AddCardDetails" >
+        <action
+            android:id="@+id/action_addCardDetails_to_cardDetails"
+            app:destination="@id/cardDetails"
+            app:popUpTo="@id/cardDetails" />
+    </fragment>
     <action android:id="@+id/action_global_addCardDetails" app:destination="@id/addCardDetails" />
     <fragment
         android:id="@+id/addBankDetails"
         android:name="com.example.passwordvault.ui.fragments.AddBankDetails"
-        android:label="AddBankDetails" />
+        android:label="AddBankDetails" >
+        <action
+            android:id="@+id/action_addBankDetails_to_bankDetails"
+            app:destination="@id/bankDetails"
+            app:popUpTo="@id/bankDetails" />
+    </fragment>
     <fragment
         android:id="@+id/addLoginDetails"
         android:name="com.example.passwordvault.ui.fragments.AddLoginDetails"
-        android:label="AddLoginDetails" /><action android:id="@+id/action_global_addBankDetails" app:destination="@id/addBankDetails"/><action android:id="@+id/action_global_addLoginDetails" app:destination="@id/addLoginDetails"/>
+        android:label="AddLoginDetails" >
+        <action
+            android:id="@+id/action_addLoginDetails_to_loginDetails"
+            app:destination="@id/loginDetails"
+            app:popUpTo="@id/loginDetails" />
+    </fragment><action android:id="@+id/action_global_addBankDetails" app:destination="@id/addBankDetails"/><action android:id="@+id/action_global_addLoginDetails" app:destination="@id/addLoginDetails"/>
 </navigation>

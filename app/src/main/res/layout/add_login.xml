@@ -10,7 +10,7 @@
         android:textSize="24dp"
         android:text="Category"/>
     <Spinner
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="40dp"
         android:layout_alignParentRight="true"
@@ -111,6 +111,19 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/button_bg"
         android:text="Add Login Details"
+        android:textColor="#fff"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/generatePassword"
+        android:layout_below="@id/addLoginDetails"
+        android:padding="10dp"
+        android:layout_marginTop="40dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:background="@drawable/button_bg"
+        android:text="Generate Password"
         android:textColor="#fff"
         android:layout_centerHorizontal="true"/>
 </RelativeLayout>

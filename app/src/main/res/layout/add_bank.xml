@@ -5,7 +5,7 @@
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="105dp"
+        android:layout_marginTop="48dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/bankIcon"
         android:src="@drawable/bank_1"
@@ -17,12 +17,12 @@
         android:layout_marginRight="20dp"
         android:layout_toRightOf="@id/bankIcon"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="30dp"
         android:hint="Bank Name"/>
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="100dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/bankAccountIcon"
         android:src="@drawable/user"
@@ -32,14 +32,15 @@
         android:layout_height="60dp"
         android:id="@+id/bankAccountNumberEt"
         android:layout_marginRight="20dp"
+        android:inputType="number"
         android:layout_toRightOf="@id/bankAccountIcon"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="80dp"
         android:hint="Account Number"/>
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="160dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/bankIFSCIcon"
         android:src="@drawable/ifsc"
@@ -51,12 +52,12 @@
         android:layout_marginRight="20dp"
         android:layout_toRightOf="@id/bankIFSCIcon"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="140dp"
         android:hint="IFSC Code"/>
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="220dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/bankAddressIcon"
         android:src="@drawable/home"
@@ -68,7 +69,7 @@
         android:layout_marginRight="20dp"
         android:layout_toRightOf="@id/bankAddressIcon"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="200dp"
         android:hint="Branch Address"/>
 
     <Button
