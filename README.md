@@ -8,6 +8,7 @@ An application where you can store all your password, bank details, card details
 - Store Login Details
 - Store Card details
 - Store Bank details
+- In-app Password generator
 - Can easily access any details with one master PIN and copy details instantly.
 
 
